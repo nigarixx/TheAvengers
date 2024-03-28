@@ -9,21 +9,18 @@ import UIKit
 
 class detailsVC: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var heroName: UILabel!
+    @IBOutlet weak var realName: UILabel!
+    @IBOutlet weak var superPower: UILabel!
+    var selectedHero : Hero?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        heroName.text = selectedHero?.name
+        realName.text = selectedHero?.realName
+        superPower.text = selectedHero?.power
+        imageView.image = selectedHero?.image
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
